@@ -30,8 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.составНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.остатокНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.остатокBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orgDataSet = new org.orgDataSet();
+            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.списаниеНомерDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.составСписанияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -60,10 +64,6 @@
             this.составСписанияTableAdapter = new org.orgDataSetTableAdapters.СоставСписанияTableAdapter();
             this.сотрудникTableAdapter = new org.orgDataSetTableAdapters.СотрудникTableAdapter();
             this.остатокTableAdapter = new org.orgDataSetTableAdapters.ОстатокTableAdapter();
-            this.составНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.остатокНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.списаниеНомерDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.остатокBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orgDataSet)).BeginInit();
@@ -79,6 +79,8 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -94,6 +96,25 @@
             this.dataGridView2.Size = new System.Drawing.Size(760, 179);
             this.dataGridView2.TabIndex = 61;
             // 
+            // составНомерDataGridViewTextBoxColumn
+            // 
+            this.составНомерDataGridViewTextBoxColumn.DataPropertyName = "СоставНомер";
+            this.составНомерDataGridViewTextBoxColumn.HeaderText = "СоставНомер";
+            this.составНомерDataGridViewTextBoxColumn.Name = "составНомерDataGridViewTextBoxColumn";
+            this.составНомерDataGridViewTextBoxColumn.ReadOnly = true;
+            this.составНомерDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // остатокНомерDataGridViewTextBoxColumn
+            // 
+            this.остатокНомерDataGridViewTextBoxColumn.DataPropertyName = "ОстатокНомер";
+            this.остатокНомерDataGridViewTextBoxColumn.DataSource = this.остатокBindingSource;
+            this.остатокНомерDataGridViewTextBoxColumn.DisplayMember = "Наименование";
+            this.остатокНомерDataGridViewTextBoxColumn.HeaderText = "Остаток";
+            this.остатокНомерDataGridViewTextBoxColumn.Name = "остатокНомерDataGridViewTextBoxColumn";
+            this.остатокНомерDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.остатокНомерDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.остатокНомерDataGridViewTextBoxColumn.ValueMember = "ОстатокНомер";
+            // 
             // остатокBindingSource
             // 
             this.остатокBindingSource.DataMember = "Остаток";
@@ -103,6 +124,19 @@
             // 
             this.orgDataSet.DataSetName = "orgDataSet";
             this.orgDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // количествоDataGridViewTextBoxColumn
+            // 
+            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
+            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
+            // 
+            // списаниеНомерDataGridViewTextBoxColumn1
+            // 
+            this.списаниеНомерDataGridViewTextBoxColumn1.DataPropertyName = "СписаниеНомер";
+            this.списаниеНомерDataGridViewTextBoxColumn1.HeaderText = "СписаниеНомер";
+            this.списаниеНомерDataGridViewTextBoxColumn1.Name = "списаниеНомерDataGridViewTextBoxColumn1";
+            this.списаниеНомерDataGridViewTextBoxColumn1.Visible = false;
             // 
             // составСписанияBindingSource
             // 
@@ -120,6 +154,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -347,38 +383,6 @@
             // остатокTableAdapter
             // 
             this.остатокTableAdapter.ClearBeforeFill = true;
-            // 
-            // составНомерDataGridViewTextBoxColumn
-            // 
-            this.составНомерDataGridViewTextBoxColumn.DataPropertyName = "СоставНомер";
-            this.составНомерDataGridViewTextBoxColumn.HeaderText = "СоставНомер";
-            this.составНомерDataGridViewTextBoxColumn.Name = "составНомерDataGridViewTextBoxColumn";
-            this.составНомерDataGridViewTextBoxColumn.ReadOnly = true;
-            this.составНомерDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // остатокНомерDataGridViewTextBoxColumn
-            // 
-            this.остатокНомерDataGridViewTextBoxColumn.DataPropertyName = "ОстатокНомер";
-            this.остатокНомерDataGridViewTextBoxColumn.DataSource = this.остатокBindingSource;
-            this.остатокНомерDataGridViewTextBoxColumn.DisplayMember = "Наименование";
-            this.остатокНомерDataGridViewTextBoxColumn.HeaderText = "Остаток";
-            this.остатокНомерDataGridViewTextBoxColumn.Name = "остатокНомерDataGridViewTextBoxColumn";
-            this.остатокНомерDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.остатокНомерDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.остатокНомерDataGridViewTextBoxColumn.ValueMember = "ОстатокНомер";
-            // 
-            // количествоDataGridViewTextBoxColumn
-            // 
-            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
-            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
-            // 
-            // списаниеНомерDataGridViewTextBoxColumn1
-            // 
-            this.списаниеНомерDataGridViewTextBoxColumn1.DataPropertyName = "СписаниеНомер";
-            this.списаниеНомерDataGridViewTextBoxColumn1.HeaderText = "СписаниеНомер";
-            this.списаниеНомерDataGridViewTextBoxColumn1.Name = "списаниеНомерDataGridViewTextBoxColumn1";
-            this.списаниеНомерDataGridViewTextBoxColumn1.Visible = false;
             // 
             // frmDeduction
             // 

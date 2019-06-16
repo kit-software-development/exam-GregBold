@@ -33,9 +33,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.остатокНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.приходНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.приходBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orgDataSet = new org.orgDataSet();
+            this.ТоварНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ТоварBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.остатокBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -50,10 +54,6 @@
             this.остатокTableAdapter = new org.orgDataSetTableAdapters.ОстатокTableAdapter();
             this.ТоварTableAdapter = new org.orgDataSetTableAdapters.ТоварTableAdapter();
             this.приходTableAdapter = new org.orgDataSetTableAdapters.ПриходTableAdapter();
-            this.остатокНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.приходНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ТоварНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.приходBindingSource)).BeginInit();
@@ -85,6 +85,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -101,6 +103,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(646, 241);
             this.dataGridView1.TabIndex = 65;
             // 
+            // остатокНомерDataGridViewTextBoxColumn
+            // 
+            this.остатокНомерDataGridViewTextBoxColumn.DataPropertyName = "ОстатокНомер";
+            this.остатокНомерDataGridViewTextBoxColumn.HeaderText = "ОстатокНомер";
+            this.остатокНомерDataGridViewTextBoxColumn.Name = "остатокНомерDataGridViewTextBoxColumn";
+            this.остатокНомерDataGridViewTextBoxColumn.ReadOnly = true;
+            this.остатокНомерDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // приходНомерDataGridViewTextBoxColumn
+            // 
+            this.приходНомерDataGridViewTextBoxColumn.DataPropertyName = "ПриходНомер";
+            this.приходНомерDataGridViewTextBoxColumn.DataSource = this.приходBindingSource;
+            this.приходНомерDataGridViewTextBoxColumn.DisplayMember = "Дата";
+            this.приходНомерDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.приходНомерDataGridViewTextBoxColumn.HeaderText = "ДатаНакладной";
+            this.приходНомерDataGridViewTextBoxColumn.Name = "приходНомерDataGridViewTextBoxColumn";
+            this.приходНомерDataGridViewTextBoxColumn.ReadOnly = true;
+            this.приходНомерDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.приходНомерDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.приходНомерDataGridViewTextBoxColumn.ValueMember = "ПриходНомер";
+            // 
             // приходBindingSource
             // 
             this.приходBindingSource.DataMember = "Приход";
@@ -111,10 +134,30 @@
             this.orgDataSet.DataSetName = "orgDataSet";
             this.orgDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // ТоварНомерDataGridViewTextBoxColumn
+            // 
+            this.ТоварНомерDataGridViewTextBoxColumn.DataPropertyName = "ТоварНомер";
+            this.ТоварНомерDataGridViewTextBoxColumn.DataSource = this.ТоварBindingSource;
+            this.ТоварНомерDataGridViewTextBoxColumn.DisplayMember = "Наименование";
+            this.ТоварНомерDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.ТоварНомерDataGridViewTextBoxColumn.HeaderText = "Товар";
+            this.ТоварНомерDataGridViewTextBoxColumn.Name = "ТоварНомерDataGridViewTextBoxColumn";
+            this.ТоварНомерDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ТоварНомерDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ТоварНомерDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ТоварНомерDataGridViewTextBoxColumn.ValueMember = "ТоварНомер";
+            // 
             // ТоварBindingSource
             // 
             this.ТоварBindingSource.DataMember = "Товар";
             this.ТоварBindingSource.DataSource = this.orgDataSet;
+            // 
+            // количествоDataGridViewTextBoxColumn
+            // 
+            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
+            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
+            this.количествоDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // остатокBindingSource
             // 
@@ -152,7 +195,7 @@
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(45, 22);
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem1.Text = "для {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Общее число элементов";
             // 
@@ -227,47 +270,6 @@
             // приходTableAdapter
             // 
             this.приходTableAdapter.ClearBeforeFill = true;
-            // 
-            // остатокНомерDataGridViewTextBoxColumn
-            // 
-            this.остатокНомерDataGridViewTextBoxColumn.DataPropertyName = "ОстатокНомер";
-            this.остатокНомерDataGridViewTextBoxColumn.HeaderText = "ОстатокНомер";
-            this.остатокНомерDataGridViewTextBoxColumn.Name = "остатокНомерDataGridViewTextBoxColumn";
-            this.остатокНомерDataGridViewTextBoxColumn.ReadOnly = true;
-            this.остатокНомерDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // приходНомерDataGridViewTextBoxColumn
-            // 
-            this.приходНомерDataGridViewTextBoxColumn.DataPropertyName = "ПриходНомер";
-            this.приходНомерDataGridViewTextBoxColumn.DataSource = this.приходBindingSource;
-            this.приходНомерDataGridViewTextBoxColumn.DisplayMember = "Дата";
-            this.приходНомерDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.приходНомерDataGridViewTextBoxColumn.HeaderText = "ДатаНакладной";
-            this.приходНомерDataGridViewTextBoxColumn.Name = "приходНомерDataGridViewTextBoxColumn";
-            this.приходНомерDataGridViewTextBoxColumn.ReadOnly = true;
-            this.приходНомерDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.приходНомерDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.приходНомерDataGridViewTextBoxColumn.ValueMember = "ПриходНомер";
-            // 
-            // ТоварНомерDataGridViewTextBoxColumn
-            // 
-            this.ТоварНомерDataGridViewTextBoxColumn.DataPropertyName = "ТоварНомер";
-            this.ТоварНомерDataGridViewTextBoxColumn.DataSource = this.ТоварBindingSource;
-            this.ТоварНомерDataGridViewTextBoxColumn.DisplayMember = "Наименование";
-            this.ТоварНомерDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.ТоварНомерDataGridViewTextBoxColumn.HeaderText = "Товар";
-            this.ТоварНомерDataGridViewTextBoxColumn.Name = "ТоварНомерDataGridViewTextBoxColumn";
-            this.ТоварНомерDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ТоварНомерDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ТоварНомерDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ТоварНомерDataGridViewTextBoxColumn.ValueMember = "ТоварНомер";
-            // 
-            // количествоDataGridViewTextBoxColumn
-            // 
-            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
-            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
-            this.количествоDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmStore
             // 

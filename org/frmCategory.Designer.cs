@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategory));
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.категорияНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.наименованиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.категорияBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orgDataSet = new org.orgDataSet();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
@@ -46,17 +50,13 @@
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.orgDataSet = new org.orgDataSet();
-            this.категорияBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.категорияTableAdapter = new org.orgDataSetTableAdapters.КатегорияTableAdapter();
-            this.категорияНомерDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.наименованиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.категорияBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orgDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orgDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.категорияBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigatorMoveNextItem1
@@ -70,6 +70,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -82,6 +84,30 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(485, 197);
             this.dataGridView1.TabIndex = 62;
+            // 
+            // категорияНомерDataGridViewTextBoxColumn
+            // 
+            this.категорияНомерDataGridViewTextBoxColumn.DataPropertyName = "КатегорияНомер";
+            this.категорияНомерDataGridViewTextBoxColumn.HeaderText = "КатегорияНомер";
+            this.категорияНомерDataGridViewTextBoxColumn.Name = "категорияНомерDataGridViewTextBoxColumn";
+            this.категорияНомерDataGridViewTextBoxColumn.ReadOnly = true;
+            this.категорияНомерDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // наименованиеDataGridViewTextBoxColumn
+            // 
+            this.наименованиеDataGridViewTextBoxColumn.DataPropertyName = "Наименование";
+            this.наименованиеDataGridViewTextBoxColumn.HeaderText = "Наименование";
+            this.наименованиеDataGridViewTextBoxColumn.Name = "наименованиеDataGridViewTextBoxColumn";
+            // 
+            // категорияBindingSource
+            // 
+            this.категорияBindingSource.DataMember = "Категория";
+            this.категорияBindingSource.DataSource = this.orgDataSet;
+            // 
+            // orgDataSet
+            // 
+            this.orgDataSet.DataSetName = "orgDataSet";
+            this.orgDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorSeparator4
             // 
@@ -189,7 +215,7 @@
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(45, 22);
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem1.Text = "для {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Общее число элементов";
             // 
@@ -221,33 +247,9 @@
             this.bindingNavigator.TabIndex = 63;
             this.bindingNavigator.Text = "bindingNavigator1";
             // 
-            // orgDataSet
-            // 
-            this.orgDataSet.DataSetName = "orgDataSet";
-            this.orgDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // категорияBindingSource
-            // 
-            this.категорияBindingSource.DataMember = "Категория";
-            this.категорияBindingSource.DataSource = this.orgDataSet;
-            // 
             // категорияTableAdapter
             // 
             this.категорияTableAdapter.ClearBeforeFill = true;
-            // 
-            // категорияНомерDataGridViewTextBoxColumn
-            // 
-            this.категорияНомерDataGridViewTextBoxColumn.DataPropertyName = "КатегорияНомер";
-            this.категорияНомерDataGridViewTextBoxColumn.HeaderText = "КатегорияНомер";
-            this.категорияНомерDataGridViewTextBoxColumn.Name = "категорияНомерDataGridViewTextBoxColumn";
-            this.категорияНомерDataGridViewTextBoxColumn.ReadOnly = true;
-            this.категорияНомерDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // наименованиеDataGridViewTextBoxColumn
-            // 
-            this.наименованиеDataGridViewTextBoxColumn.DataPropertyName = "Наименование";
-            this.наименованиеDataGridViewTextBoxColumn.HeaderText = "Наименование";
-            this.наименованиеDataGridViewTextBoxColumn.Name = "наименованиеDataGridViewTextBoxColumn";
             // 
             // frmCategory
             // 
@@ -261,12 +263,12 @@
             this.Text = "frmCategory";
             this.Load += new System.EventHandler(this.frmCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.категорияBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orgDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
             this.bindingNavigator.ResumeLayout(false);
             this.bindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.orgDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.категорияBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
